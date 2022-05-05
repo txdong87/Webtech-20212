@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>EX1</title>
+    <style>
+      body {
+        margin: 0 auto;
+        width: 1000px;
+      }
+
+      .container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 30px;
+      }
+
+      .color {
+        margin-bottom: 20px;
+      }
+
+      .color-link:link,
+      .color-link:visited {
+        text-decoration: none;
+        color: black;
+      }
+
+      .red-color {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box">
+        <div class="color" onmouseover="">
+          <a href="#" class="color-link red">RED</a>
+        </div>
+
+        <div id="handle-red">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique,
+          eaque quasi! Consequuntur voluptatum magni dignissimos eaque vero!
+          Soluta id dolorem dolor? Delectus recusandae facere, asperiores illo
+          ut doloribus harum optio.
+        </div>
+      </div>
+
+      <div class="box">
+        <div class="color">
+          <a href="#" class="color-link green">GREEN</a>
+        </div>
+
+        <div id="handle-green">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique,
+          eaque quasi! Consequuntur voluptatum magni dignissimos eaque vero!
+          Soluta id dolorem dolor? Delectus recusandae facere, asperiores illo
+          ut doloribus harum optio.
+        </div>
+      </div>
+
+      <div class="box">
+        <div class="color"><a href="#" class="color-link blue">BLUE</a></div>
+
+        <div id="handle-blue">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique,
+          eaque quasi! Consequuntur voluptatum magni dignissimos eaque vero!
+          Soluta id dolorem dolor? Delectus recusandae facere, asperiores illo
+          ut doloribus harum optio.
+        </div>
+      </div>
+    </div>
+    <script>
+      const red = document.querySelector('.red');
+      const green = document.querySelector('.green');
+      const blue = document.querySelector('.blue');
+      const color = document.querySelector('.color');
+      const textRed = document.getElementById('handle-red');
+      const textGreen = document.getElementById('handle-green');
+      const textBlue = document.getElementById('handle-blue');
+
+      red.onmouseover = () => {
+        textRed.style.color = 'red';
+      };
+
+      green.onmouseover = () => {
+        textGreen.style.color = 'green';
+      };
+
+      blue.onmouseover = () => {
+        textBlue.style.color = 'blue';
+      };
+
+      red.onmouseout = () => {
+        textRed.style.color = 'black';
+      };
+
+      green.onmouseout = () => {
+        textGreen.style.color = 'black';
+      };
+
+      blue.onmouseout = () => {
+        textBlue.style.color = 'black';
+      };
+    </script>
+  </body>
+</html>
