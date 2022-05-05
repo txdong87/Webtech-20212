@@ -6,20 +6,20 @@
 <body>
 	<form action="lab2.1.php" method="post">
 	<br>
-	Fill your name : <input type="text" name="name">
+	Fill your name : <br/><input type="text" name="name">
 	<br></br>
-	Fill your class : <input type="text" name="class">
+	Fill your class : <br/><input type="text" name="class">
 	<br></br>
-	Fill your university : <input type="text" name="university">
+	Fill your university : <br/><input type="text" name="university">
 	<br></br>
-	hoose your hobbies :<br> 
-	<input type="checkbox" name="hobby1" id="hobby1" value="Listening to music">
+	Choose your hobbies :<br> 
+	<input type="checkbox" name="hobby[]" value="Listening to music">
 	<label for="hobby1">Listening to music</label><br>
-	<input type="checkbox" name="hobby2" id="hobby2" value="Reading book">
+	<input type="checkbox" name="hobby[]"  value="Reading book">
 	<label for="hobby2">Reading book</label><br>
-	<input type="checkbox" name="hobby3" id="hobby3" value="Sleep">
+	<input type="checkbox" name="hobby[]"  value="Sleep">
 	<label for="hobby3">Sleep</label><br>
-	Other : <input type="text" name="hobby"><br>
+	Other : <input type="text" name="hobby[]"><br><br>
 	<input type="submit" value="submit">
 	<input type="reset" value="reset">
 	</form>
