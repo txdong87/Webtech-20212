@@ -1,0 +1,38 @@
+ỨNG DỤNG CỦA XML
+ XUL: XUL viết tắt của XML User Interface Language, là một ngôn ngữ đánh dấu giao diện người dùng được phát triển bởi Mozilla.
+Ứng dụng: XUL là một phương ngữ XML để viết giao diện người dùng đồ họa, cho phép các nhà phát triển viết các phần tử giao diện người dùng theo cách tương tự như các trang web ví dụ nổi bật nhất là trình duyệt web Firefox.
+Tổ chức xác định tiêu chuẩn: Mozilla Foundation
+
+EPUB: EPUB là một định dạng tệp sách điện tử sử dụng phần mở rộng tệp ".epub". Thuật ngữ này là viết tắt của xuất bản điện tử và đôi khi được viết theo kiểu ePub. EPUB được hỗ trợ bởi nhiều trình đọc sách điện tử và phần mềm tương thích có sẵn cho hầu hết điện thoại thông minh, máy tính bảng và máy tính. EPUB là một tiêu chuẩn kỹ thuật được xuất bản bởi Diễn đàn Xuất bản Kỹ thuật số Quốc tế (IDPF). Nó đã trở thành một tiêu chuẩn chính thức của IDPF vào tháng 9 năm 2007, thay thế cho tiêu chuẩn Sách điện tử Mở cũ hơn.
+Ứng dụng: định dạng tệp sách điện tử sử dụng phần mở rộng tệp ".epub".
+Tổ chức xác định tiêu chuẩn:  International Digital Publishing Forum (IDPF)
+
+XBRL: XBRL (eXtensible Business Reporting Language) là một khuôn khổ toàn cầu và có sẵn miễn phí để trao đổi thông tin kinh doanh. XBRL cho phép thể hiện ý nghĩa ngữ nghĩa thường được yêu cầu trong báo cáo kinh doanh. Ngôn ngữ dựa trên XML và sử dụng cú pháp XML và các công nghệ XML liên quan như Lược đồ XML, XLink, XPath và Không gian tên.
+ Ứng dụng: XBRL là xác định và trao đổi thông tin tài chính, chẳng hạn như báo cáo tài chính. Tổ chức xác định tiêu chuẩn:  XBRL International
+
+Android SDK:
+SDK viết tắt của Software Development Kit là các công cụ và phần mềm dùng để phát triển ứng dụng thông qua một nền tảng nhất định.
+Ứng dụng: Phát triển ứng dụng trên thiết bị android.
+Tổ chức xác định tiêu chuẩn:  Google.
+
+
+GIẢI THÍCH CÁCH SỬ DỤNG CỦA MỘT SỐ PHẦN TỬ THUỘC TÍNH ĐẶC TRƯNG
+<circle> của SVG: Để vẽ hình tròn trên trong tọa độ 2 chiều hiển thị trên web. Nó cho phép load trang web nhanh hơn và có khả năng phóng to mà không làm giảm chất lượng hình ảnh.
+VD: 
+<svg xmlns="http://www.w3.org/2000/svg"
+width="200" height="200">
+<circle cx="100" cy="100" r="50" stroke="black" stroke-width="5" fill="red" />
+</svg>
+
+< coordinates> của KML: Dùng để lưu tọa độ kinh độ, vỹ độ, và độ cao của một điểm trên trái đất.
+VD: 
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Placemark>
+    <name>Hoàng Văn Thụ Hoàng Mai Hà Nội Việt Nam</name>
+    <description>nhà mình</description>
+    <Point>
+      <coordinates>105.8612147911079,20.98705359848218,12.30347463558939</coordinates>
+    </Point>
+  </Placemark>
+</kml>
+

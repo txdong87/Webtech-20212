@@ -1,0 +1,13 @@
+SO SÁNH DTD VÀ XML SCHEMA
+Giống nhau: Đều là ngôn ngữ đặc tả cấu trúc XML
+Khác nhau:
+DTD:-Ra đời rất sớm
+    -Cho phép mô tả văn bản có cấu trúc bất kỳ
+    -Đơn giản, dễ học và sử dụng
+    -Chỉ cho phép đặc tả một số “kiểu dữ liệu đơn giản” trong nội dung chính của tài liệu XML
+XML Schema
+    -Được đề xuất bởi W3C
+    -Chỉ áp dụng cho tài liệu XML
+    -Khó học và sử dụng so với DTD
+    -Cho phép đặc tả chi tiết về các “kiểu dữ liệu” được sử dụng trong nội dung chính của tài liệu XML
+
