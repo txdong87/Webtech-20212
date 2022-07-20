@@ -9,13 +9,13 @@
 	      	<div class="row">
 
 	      	<div class="input-field col s12">
-	          <input onkeypress="return isAlphaNumSpace(event);" id="name_reg" type="text" class="validate">
+	          <input onkeypress="return isAlphaNumSpace(event);" id="name_reg" type="text" class="validate" placeholder="Nguyen Van A">
 	          <label for="name_reg">Full Name</label>
 	          
 	        </div>
 
 	        <div class="input-field col s12">
-	          <input onkeypress="return isEmail(event);" id="email_reg" type="email" class="validate">
+	          <input onkeypress="return isEmail(event);" id="email_reg" type="email" class="validate" placeholder="user@gmail.com">
 	          <label for="email_reg">Email</label>
 	        </div>
 
@@ -23,13 +23,13 @@
 
 	    <div class="row">
 
-		    <div class="input-field col s6">
-	          <input id="password_reg" type="password" class="validate">
+		    <div class="input-field col s12">
+	          <input id="password_reg" type="password" class="validate" placeholder=".........">
 	          <label for="password_reg">Password</label>
 	        </div>
 
-	        <div class="input-field col s6">
-	          <input id="con_password_reg" type="password" class="validate">
+	        <div class="input-field col s12">
+	          <input id="con_password_reg" type="password" class="validate" placeholder=".........">
 	          <label for="con_password_reg">Confirm Password</label>
 	        </div>
 	        

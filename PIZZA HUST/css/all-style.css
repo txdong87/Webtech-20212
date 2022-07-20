@@ -126,10 +126,6 @@ select {
   margin: 0;
 }
 button,
-input {
-  overflow: visible;
-}
-button,
 select {
   text-transform: none;
 }
@@ -517,7 +513,7 @@ table span.badge {
   right: auto;
 }
 .row .col.s6 {
-  width: 50%;
+  width: 100%;
   margin-left: auto;
   left: auto;
   right: auto;
@@ -704,16 +700,6 @@ nav .input-field input {
   font-size: 1.2rem;
   border: none;
   padding-left: 2rem;
-}
-.input-field input:focus,
-.input-field input[type="text"]:valid,
-.input-field input[type="password"]:valid,
-.input-field input[type="email"]:valid,
-.input-field input[type="url"]:valid,
-.input-field input[type="date"]:valid {
-  border: none;
-  -webkit-box-shadow: none;
-  box-shadow: none;
 }
 a {
   text-decoration: none;
@@ -975,15 +961,6 @@ small {
   -webkit-transition: 0.3s ease-out;
   transition: 0.3s ease-out;
 }
-.waves-effect input[type="button"],
-.waves-effect input[type="reset"],
-.waves-effect input[type="submit"] {
-  border: 0;
-  font-style: normal;
-  font-size: inherit;
-  text-transform: inherit;
-  background: none;
-}
 .waves-effect img {
   position: relative;
   z-index: -1;
@@ -998,10 +975,10 @@ small {
   right: 0;
   background-color: #fafafa;
   padding: 0;
-  max-height: 70%;
+  max-height: 80%;
   width: 55%;
   margin: auto;
-  overflow-y: auto;
+  overflow-y: hidden;
   border-radius: 2px;
   will-change: top, opacity;
 }
@@ -1081,30 +1058,6 @@ label {
   -webkit-transform: translateY(12px);
   transform: translateY(12px);
 }
-.input-field > label:not(.label-icon).active {
-  -webkit-transform: translateY(-14px) scale(0.8);
-  transform: translateY(-14px) scale(0.8);
-  -webkit-transform-origin: 0 0;
-  transform-origin: 0 0;
-}
-.input-field
-  > input[type]:-webkit-autofill:not(.browser-default):not([type="search"])
-  + label,
-.input-field > input[type="date"]:not(.browser-default) + label,
-.input-field > input[type="time"]:not(.browser-default) + label {
-  -webkit-transform: translateY(-14px) scale(0.8);
-  transform: translateY(-14px) scale(0.8);
-  -webkit-transform-origin: 0 0;
-  transform-origin: 0 0;
-}
-.input-field .helper-text {
-  position: relative;
-  min-height: 18px;
-  display: block;
-  font-size: 12px;
-  color: rgba(0, 0, 0, 0.54);
-}
-
 .hiddendiv {
   visibility: hidden;
   white-space: pre-wrap;
@@ -1209,11 +1162,7 @@ select {
 }
 button,
 input {
-  overflow: visible;
-}
-button,
-select {
-  text-transform: none;
+  overflow: hidden;
 }
 fieldset {
   padding: 0.35em 0.75em 0.625em;
@@ -1393,14 +1342,6 @@ nav .sidenav-trigger i {
 .carousel .carousel-item > img {
   width: 100%;
 }
-nav .input-field input:focus,
-nav .input-field input[type="text"]:valid,
-nav .input-field input[type="password"]:valid,
-nav .input-field input[type="email"]:valid {
-  border: none;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
 .navbar-fixed {
   position: relative;
   height: 56px;
@@ -1424,7 +1365,37 @@ nav .input-field input[type="email"]:valid {
     height: 64px;
   }
 }
-.input-field.col .prefix ~ label,
-.input-field.col .prefix ~ .validate ~ label {
-  width: calc(100% - 3rem - 1.5rem);
+.input-field.col.s12 label,
+.input-field.col.s6 label
+{
+  margin: 0px;
+  color: rgb(255, 255, 255);
+}
+
+.input-field.col.s12 input,
+.input-field.col.s6 input
+{
+  margin-left: 150px;
+  background: hsl(0deg 0% 100%);
+  box-shadow: 0 0 1em hsl(231deg 62% 94%);
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  border-radius: 20px;
+  color: hsl(0deg 0% 30%);
+}
+.modal{
+  color: white;
+}
+#modal1{
+  width: 30%;
+  background-color:rgb(243, 163, 163) ;
+  border-radius: 5%;
+}
+#modal2{
+  width: 35%;
+  height: 200%;
+  background-color:rgb(243, 163, 163) ;
+  border-radius: 5%;
 }
