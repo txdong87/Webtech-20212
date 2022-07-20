@@ -952,10 +952,12 @@ small {
   position: relative;
 }
 .card .card-image {
+  object-fit: fill;
   position: relative;
   height: 200px;
 }
 .card .card-image img {
+  object-fit: fill;
   display: block;
   border-radius: 2px 2px 0 0;
   position: relative;
@@ -2910,3 +2912,27 @@ nav .input-field input[type="email"]:valid {
   width: calc(100% - 3rem - 1.5rem);
 }
 
+.btn {
+  display: inline-block;
+  font-weight: 600;
+  color: #343a40;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 0.45rem 0.85rem;
+  font-size: 1rem;
+  line-height: 1.5;
+      border-radius: 0.2rem;
+  
+} 
+
+.btn-primary {
+  color: #fff;
+  background-color: #3167eb;
+  border-color: #3167eb;
+}
