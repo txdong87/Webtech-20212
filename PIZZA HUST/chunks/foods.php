@@ -56,7 +56,7 @@ $arr_all = $query->fetchAll(PDO::FETCH_ASSOC);
 			<div class="col s12 m4">
 				<div class="card">
 				    <div class="card-image waves-effect waves-block waves-light">
-				      <img class="activator img-fill" object-fill="contain !important" src="images/food<?php echo $i+$j-1; ?>.jpg" >
+				      <img class="activator img-fill" object-fill="contain !important" src="<?php echo $arr_all[$i+$j-2]['imageUrl']; ?>" >
 				    </div>
 				    <div class="card-content">
 						<span class="card-title activator grey-text text-darken-4"><a class="black-text" href=""><?php echo $arr_all[$i+$j-2]['fname']; ?></a><i class="material-icons right">more_vert</i></span>
@@ -64,9 +64,9 @@ $arr_all = $query->fetchAll(PDO::FETCH_ASSOC);
 							<h5><?php echo $arr_all[$i+$j-2]['price']; ?><small>VND</small></h5>
 							</div>
 							<div class="card-content center">
-							<a href="backends/order-food.php?id=<?php echo $arr_all[$i+$j-2]['id']; ?>" style="background: #ee6e73;" class="btn waves-effect waves-block waves-light" href="">Order Now!</a>
+							<a href="backends/order-food.php?id=<?php echo $arr_all[$i+$j-2]['id']; ?>" style="background: #ee6e73;">Order Now!</a>
 							
-							<a  style="background: #ee6e73;"  onclick="addCart(<?php echo $arr_all[$i+$j-2]['id'];?>)">Add to cart</a></div>
+							<a class="btn waves-effect waves-block waves-light" href="cart.php"  style="background: #ee6e73;"  onclick="addCart(<?php echo $arr_all[$i+$j-2]['id'];?>)">Add to cart</a></div>
 						</div>
 						<div class="card-reveal">
 						<span class="card-title grey-text text-darken-4"><?php echo $arr_all[$i+$j-2]['fname']; ?><i class="material-icons right">close</i></span>
