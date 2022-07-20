@@ -1,27 +1,4 @@
 <?php
-
-require('backends/connection-pdo.php');
-
-?>
-<?php
-// If the user clicked the add to cart button on the product page we can check for the form data
-if (isset($_POST['id']) ) {
-  $id=$_POST['id'];
-   $sqlselect='SELECT * FROM food WHERE id = '.$id;
-   $query  = $pdoconn->prepare($sqlselect);
-    $query->execute();
-    $row = $query->fetchAll(PDO::FETCH_ASSOC);
-    if(!isset($_SESSION["cart"])){
-		$cart[$id]=array(
-			'name' => $row['fname'],
-			'price'=>$row[3],
-		);
-	}
-    print_r($cart);
-	print_r($row);
-    exit;
-}?>
-<?php
 session_start();
 ?>
 
@@ -29,7 +6,7 @@ session_start();
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title> Cart!</title>
+	<title> Foods!</title>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<!-- <meta http-equiv="refresh" content="1"> -->
@@ -57,40 +34,11 @@ session_start();
 
 
 
-
 	<?php require('chunks/navbar.php'); ?>
 
-
 	<?php require('chunks/banner-slider.php'); ?>
-	
-	<table class="table table-striped">
-  <thead class="thead-light">
-    <tr>                                                                                                         k
-      <th scope="col">Item</th>
-      <th scope="col">Price</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">{</th>
-      <td></td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
-  </tbody>
-</table>
+
+	<?php require('chunks/cart.php'); ?>
 
 	<?php require('chunks/footer.php'); ?>
 
@@ -101,10 +49,17 @@ session_start();
 	  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
 	  crossorigin="anonymous"></script>
 
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    
     <script src="js/loaders.js"></script>
     <script src="js/ajax.js"></script>
+    <script> function updateCart(id){
+      num=$("#num_"+id).val();
+      $.post("updatecart.php",{'id':id,'num':num}, function(data){
+        $("#listCart").load("cart.php #listCart");
+			});
+    
+      
+    }</script>
 </body>
 </html>
