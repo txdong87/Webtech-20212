@@ -25,7 +25,7 @@ session_start();
 
 	<?php require('chunks/login-modal.php'); ?>
 	<?php require('chunks/register-modal.php'); ?>
-
+	<?php require('chunks/info-modal.php'); ?>
 
 	
 
