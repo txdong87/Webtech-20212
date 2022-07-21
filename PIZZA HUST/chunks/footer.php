@@ -10,9 +10,8 @@
               <div class="col l4 offset-l2 s12">
                 <h5 class="white-text">Social Media Links</h5>
                 <ul>
-                  <li><a class="grey-text text-lighten-3" target="blank" href="https://www.facebook.com/tapxacdinh265/">Facebook</a></li>
-                  <li><a class="grey-text text-lighten-3" target ="blank" href="https://github.com/txdong87">Github</a></li>
-                 
+                  <li><a class="link" class="grey-text text-lighten-3" target="blank" href="https://www.facebook.com/tapxacdinh265/">Facebook</a></li>
+                  <li><a class="link" class="grey-text text-lighten-3" target ="blank" href="https://github.com/txdong87">Github</a></li>
                 </ul>
               </div>
             </div>
