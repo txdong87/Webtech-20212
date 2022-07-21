@@ -973,14 +973,20 @@ small {
   position: fixed;
   left: 0;
   right: 0;
-  background-color: #fafafa;
+  background-color: #b75656;
   padding: 0;
   max-height: 80%;
   width: 55%;
+  color: white;
   margin: auto;
   overflow-y: hidden;
   border-radius: 2px;
   will-change: top, opacity;
+}
+.modal{
+  width: 30%;
+  background-color:rgb(243, 163, 163) ;
+  border-radius: 5%;
 }
 .modal:focus {
   outline: none;
@@ -995,6 +1001,12 @@ small {
 }
 .modal .modal-close {
   cursor: pointer;
+}
+.modal .modal-footer {
+  font-size: 100%;
+  font-style: normal;
+  color: white;
+  padding: auto;
 }
 select:focus {
   outline: 1px solid #c9f3ef;
@@ -1384,18 +1396,4 @@ nav .sidenav-trigger i {
   gap: 0.5em;
   border-radius: 20px;
   color: hsl(0deg 0% 30%);
-}
-.modal{
-  color: white;
-}
-#modal1{
-  width: 30%;
-  background-color:rgb(243, 163, 163) ;
-  border-radius: 5%;
-}
-#modal2{
-  width: 35%;
-  height: 200%;
-  background-color:rgb(243, 163, 163) ;
-  border-radius: 5%;
 }
