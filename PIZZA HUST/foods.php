@@ -31,7 +31,7 @@ session_start();
 
 	<?php require('chunks/register-modal.php'); ?>
 
-
+	<?php require('chunks/info-modal.php'); ?>
 
 
 	<?php require('chunks/navbar.php'); ?>

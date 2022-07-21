@@ -30,7 +30,7 @@ $regex_password = '/^[(A-Z)?(a-z)?(0-9)?!?@?#?-?_?%?]+$/';
 
 if (!preg_match($regex_email, $_POST['email']) || !preg_match($regex_password, $_POST['password'])) {
 
-	$arr = array ('code'=>"0",'msg'=>"Whoa! Invalid Inputs!");
+	$arr = array ('code'=>"0",'msg'=>" Invalid Inputs!");
 
 	echo json_encode($arr);
 
