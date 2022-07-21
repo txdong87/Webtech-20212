@@ -52,7 +52,7 @@ if ($query->execute([$order_id, $user_id, $food_id, $user_name, $timest])) {
 
 	$_SESSION['msg'] = 'Order Placed! Your Order ID is : '.$order_id;
 
-	header('location: ../foods.php');
+	header('location: ../cart.php');
 	
 } else {
 

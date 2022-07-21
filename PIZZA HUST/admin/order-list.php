@@ -8,7 +8,7 @@
 
 require('../backends/connection-pdo.php');
 
-$sql = 'SELECT orders.order_id, orders.user_name, orders.timestamp, food.fname,food.price FROM orders LEFT JOIN food ON orders.food_id = food.id';
+$sql = 'SELECT orders.order_id, orders.user_name, orders.timestamp, food.fname,food.price FROM orders LEFT JOIN food ON orders.food_id = food.id ORDER BY(orders.timestamp)DESC';
 
 $query  = $pdoconn->prepare($sql);
 $query->execute();

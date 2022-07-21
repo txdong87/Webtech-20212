@@ -33,7 +33,7 @@ session_start();
 	<?php require('chunks/navbar.php'); ?>
 	<?php require('chunks/banner-slider.php'); ?>
 
-	<?php require('chunks/description.php'); ?>
+	
 
 
 
