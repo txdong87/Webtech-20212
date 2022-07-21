@@ -9,12 +9,12 @@
 	      	<div class="row">
 
 	        <div class="input-field col s12">
-	          <input id="email_login" type="email" class="validate">
+	          <input id="email_login" type="email" class="validate" placeholder="user@gmail.com">
 	          <label for="email">Email</label>
 	        </div>
 
 		    <div class="input-field col s12">
-	          <input id="password_login" type="password" class="validate">
+	          <input id="password_login" type="password" class="validate" placeholder=".........">
 	          <label for="password">Password</label>
 	        </div>
 	        
