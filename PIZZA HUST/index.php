@@ -16,7 +16,7 @@ session_start();
 
 	<link href="https://fonts.googleapis.com/css?family=Bree+Serif&display=swap" rel="stylesheet">
 
-	<link rel="stylesheet" href="css/style.css">
+	
 	<link rel="stylesheet" href="css/all-style.css">
 
 	
