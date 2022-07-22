@@ -991,11 +991,6 @@ small {
 .modal:focus {
   outline: none;
 }
-@media only screen and (max-width: 992px) {
-  .modal {
-    width: 80%;
-  }
-}
 .modal .modal-content {
   padding: 24px;
 }
@@ -1007,6 +1002,24 @@ small {
   font-style: normal;
   color: white;
   padding: auto;
+}
+@media only screen and (max-width: 992px) {
+  .modal{
+    width: 70%;
+    font-size: 40%;
+  }
+}
+@media only screen and (max-width: 1160px) {
+  .modal {
+    width: 60%;
+    font-size: 80%;
+  }
+}
+@media only screen and (max-width: 1300px) {
+  .modal {
+    width: 40%;
+    font-size: 90%;
+  }
 }
 select:focus {
   outline: 1px solid #c9f3ef;
