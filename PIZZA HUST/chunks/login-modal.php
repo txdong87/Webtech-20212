@@ -21,7 +21,9 @@
 		  </div>
 
 		  <a href="javascript:void(0)" class="modal-close waves-effect waves-light btn" id="login_btn" style="background: #ee6e73 !important;">Login</a>
-	      	
+		  <div class="modal-footer">
+	      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+	    </div>
 	      </form>
 	    </div>
 	  </div>
