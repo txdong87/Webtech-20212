@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th7 20, 2022 lúc 08:32 AM
+-- Thời gian đã tạo: Th7 23, 2022 lúc 09:11 PM
 -- Phiên bản máy phục vụ: 10.4.24-MariaDB
 -- Phiên bản PHP: 7.4.29
 
@@ -41,19 +41,6 @@ CREATE TABLE `admin` (
 INSERT INTO `admin` (`id`, `name`, `email`, `password`) VALUES
 (1, 'Admin', 'admin@gmail.com', '12345'),
 (2, 'Dong', 'tranxuandonghy@gmail.com', '12345');
-
--- --------------------------------------------------------
-
---
--- Cấu trúc bảng cho bảng `cart`
---
-
-CREATE TABLE `cart` (
-  `id` int(11) NOT NULL,
-  `userId` int(11) NOT NULL,
-  `total_price` varchar(198) NOT NULL,
-  `updateTime` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -118,27 +105,47 @@ INSERT INTO `food` (`id`, `cat_id`, `fname`, `price`, `description`, `imageUrl`)
 
 CREATE TABLE `orders` (
   `id` int(11) NOT NULL,
-  `order_id` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-  `user_id` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
-  `food_id` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
-  `user_name` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-  `timestamp` varchar(50) COLLATE utf8_unicode_ci NOT NULL
+  `users_id` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `name` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `address` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `phone` char(20) COLLATE utf8_unicode_ci NOT NULL,
+  `timestamp` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `orders`
 --
 
-INSERT INTO `orders` (`id`, `order_id`, `user_id`, `food_id`, `user_name`, `timestamp`) VALUES
-(9, 'ABC927654', '3', '6', 'Tran', '09:07:2022 03:56:20pm'),
-(10, 'ABC776950', '3', '2', 'Tran', '11:07:2022 09:20:03pm'),
-(11, 'ABC150415', '3', '2', 'Tran', '19:07:2022 12:38:03am'),
-(12, 'ABC905714', '3', '2', 'Tran', '19:07:2022 01:18:29am'),
-(13, 'ABC386982', '3', '2', 'Tran', '19:07:2022 09:50:39pm'),
-(14, 'ABC264863', '3', '1', 'Tran', '19:07:2022 09:53:13pm'),
-(15, 'ABC176757', '3', '2', 'Tran', '19:07:2022 10:15:19pm'),
-(16, 'ABC331311', '3', '5', 'Tran', '20:07:2022 12:01:25am'),
-(17, 'ABC753453', '3', '2', 'Tran', '20:07:2022 12:17:19am');
+INSERT INTO `orders` (`id`, `users_id`, `name`, `email`, `address`, `phone`, `timestamp`) VALUES
+(1, '13', 'Trần Xuân Đồng', 'abc@gmail.com', 'SA', '0388526788', '2022-07-23 13:48:23'),
+(2, '13', 'Trần Xuân Đồng', 'abc@gmail.com', '32', '(+84) 563371697', '2022-07-23 21:05:54'),
+(3, '13', 'gg', 'abc@gmail.com', '12', '01', '2022-07-23 21:06:36'),
+(4, '3', 'as', 'ac@gmail.com', 'q', '1', '2022-07-23 21:10:55');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `order_detail`
+--
+
+CREATE TABLE `order_detail` (
+  `id` int(11) NOT NULL,
+  `order_id` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `food_id` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `quantity` int(50) NOT NULL,
+  `price` int(20) NOT NULL,
+  `createAt` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `order_detail`
+--
+
+INSERT INTO `order_detail` (`id`, `order_id`, `food_id`, `quantity`, `price`, `createAt`) VALUES
+(1, '3', '2', 1, 50000, '2022-07-23 14:06:36'),
+(2, '4', '3', 1, 15000, '2022-07-23 14:10:55'),
+(3, '4', '5', 1, 55000, '2022-07-23 14:10:55');
 
 -- --------------------------------------------------------
 
@@ -151,7 +158,7 @@ CREATE TABLE `users` (
   `name` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
   `email` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
   `password` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `timestamp` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL
+  `timestamp` timestamp NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -159,7 +166,17 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `timestamp`) VALUES
-(3, 'Tran Xuan Dong', 'tranxuandonghy@gmail.com', '123456', '29:06:2022 01:40:08am');
+(3, 'Tran Xuan Dong', 'tranxuandonghy@gmail.com', '123456', '0000-00-00 00:00:00'),
+(4, 'abc', '123@gmail.com', '123', NULL),
+(5, 'asd', 'xzc@gmail.com', '123', '0000-00-00 00:00:00'),
+(6, 'SSS', 'a@gmail.com', '123', '0000-00-00 00:00:00'),
+(7, 'dang', 'nguyen@gmail.com', '1234', '0000-00-00 00:00:00'),
+(8, 'a', 'abc@gmail.com', '123', '0000-00-00 00:00:00'),
+(9, 'abc', '1@gmail.com', '123', '0000-00-00 00:00:00'),
+(10, 'abc', '12@gmail.com', '12', '0000-00-00 00:00:00'),
+(11, '123', 'ad@gmail.com', '123', '0000-00-00 00:00:00'),
+(12, 'qa', 'l@gmail.com', '123', '0000-00-00 00:00:00'),
+(13, 'b', 'b@gmail.com', '12', '0000-00-00 00:00:00');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -172,12 +189,6 @@ ALTER TABLE `admin`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `cart`
---
-ALTER TABLE `cart`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Chỉ mục cho bảng `categories`
 --
 ALTER TABLE `categories`
@@ -187,6 +198,12 @@ ALTER TABLE `categories`
 -- Chỉ mục cho bảng `orders`
 --
 ALTER TABLE `orders`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Chỉ mục cho bảng `order_detail`
+--
+ALTER TABLE `order_detail`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -206,12 +223,6 @@ ALTER TABLE `admin`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT cho bảng `cart`
---
-ALTER TABLE `cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT cho bảng `categories`
 --
 ALTER TABLE `categories`
@@ -221,13 +232,19 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT cho bảng `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT cho bảng `order_detail`
+--
+ALTER TABLE `order_detail`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
