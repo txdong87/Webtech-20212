@@ -30,7 +30,6 @@ if (isset($_POST['id']) ) {
     print_r($row);
     if(!isset($_SESSION["cart"])){
 		$cart[$id]=array(
-      
 			'fname' => $row["fname"],
 			'price'=>$row["price"],
       'number'=>1,
@@ -89,8 +88,7 @@ $number=0;
       <td class="details"><?php echo $values["fname"]?> </td>
       <td class="price-center"><?php echo $values["price"]?></td> 
       <td class="qty text-center"><input class="input" type="number" value="<?php echo $values["number"]?>" id="num_<?php echo $key;?>" onclick="updateCart(<?php echo $key?>)"></td>
-      <td class="total text-center"><strong class="primary-color">
-      <?php 
+      <td class="total text-center"><strong class="primary-color"><?php 
       $total=(int)$values["number"]*(int)$values["price"];
       $subtotal+=$total;
       echo number_format($total,0,",",".") ;
@@ -107,11 +105,12 @@ $number=0;
     </tr>
   </tfoot>
 </table>
-<div class="bottom-wrap" colspan="2">
+<div class="bottom-wrap" >
+  
+<a class="btn btn-secondary float-center" href="foods.php" role="button">Shopping </a>
 
-<a class="btn waves-effect waves-block waves-light" href="foods.php" role="button">Shopping </a>
-<br>
-<a href="index.php" class="btn waves-effect waves-block waves-light"   style="background: #ee6e73" >BUY NOW</a></div>
+				<a href="checkout.php" class="btn  btn-secondary btn-hover float-left" data-abc="true"> Buy now </a>
+</div>
 				
 			</div> 
       </div></div></div>

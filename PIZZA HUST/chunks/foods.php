@@ -21,7 +21,7 @@ $arr_all = $query->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 
-<section class="fcategories">
+<section class="foods">
 
 	<div class="container">
 
@@ -63,8 +63,8 @@ $arr_all = $query->fetchAll(PDO::FETCH_ASSOC);
 							<div class="card-content">
 							<h5><?php echo $arr_all[$i+$j-2]['price']; ?><small>VND</small></h5>
 							</div>
-							<div class="card-content center">
-							<a class="btn waves-effect waves-block waves-light"style="background: #ee6e73; onclick="addCart(<?php echo $arr_all[$i+$j-2]['id'];?> href="backends/order-food.php?id=<?php echo $arr_all[$i+$j-2]['id']; ?>  ">Add to cart</a></div>
+							<div class="card-content center">							
+							<a  class="btn waves-effect waves-block waves-light" href="backends/order-food.php" href="cart.php"  style="background: #ee6e73"; onclick="addCart(<?php echo $arr_all[$i+$j-2]['id'];?>)">Add to cart</a></div>
 						</div>
 						<div class="card-reveal">
 						<span class="card-title grey-text text-darken-4"><?php echo $arr_all[$i+$j-2]['fname']; ?><i class="material-icons right">close</i></span>

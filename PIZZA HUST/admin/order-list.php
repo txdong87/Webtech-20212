@@ -8,9 +8,10 @@
 
 require('../backends/connection-pdo.php');
 
-$sql = 'SELECT orders.order_id, orders.user_name, orders.timestamp, food.fname,food.price FROM orders LEFT JOIN food ON orders.food_id = food.id ORDER BY(orders.timestamp)DESC';
 
-$query  = $pdoconn->prepare($sql);
+//$sql = 'SELECT * FROM orders LEFT JOIN food ON orders.food_id = food.id  ORDER BY(orders.timestamp)DESC' ;
+$sql="SELECT * FROM orders";
+$query = $pdoconn->prepare($sql);
 $query->execute();
 $arr_all = $query->fetchAll(PDO::FETCH_ASSOC);
 
@@ -42,11 +43,12 @@ $arr_all = $query->fetchAll(PDO::FETCH_ASSOC);
 		<table class="centered responsive-table">
         <thead>
           <tr>
-              <th>Order ID</th>
-              <th>User Name</th>
-              <th>Food Name</th>
-              <th>Price</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Address</th>
+              <th>Phone</th>
               <th>Timestamp</th>
+              <th></th>
           </tr>
         </thead>
 
@@ -57,11 +59,12 @@ $arr_all = $query->fetchAll(PDO::FETCH_ASSOC);
 
           ?>
           <tr>
-            <td><?php echo $key['order_id']; ?></td>
-            <td><?php echo $key['user_name']; ?></td>
-            <td><?php echo $key['fname']; ?></td>
-            <td><?php echo $key['price']; ?></td>
+            <td><?php echo $key['name']; ?></td>
+            <td><?php echo $key['email']; ?></td>
+            <td><?php echo $key['address']; ?></td>
+            <td><?php echo $key['phone']; ?></td>
             <td><?php echo $key['timestamp']; ?></td>
+            <td><a href="order-detail.php?id=<?php echo $key['id']?>"  >Xem chi tiết</a></td>
           </tr>
 
           <?php } ?>
