@@ -29,13 +29,13 @@
             ?>
 
             <div class="row">
-                <div class="col s6" style="">
+                <div class="col s6" >
                             <div class="input-field">
                             <input id="name" name="name" type="text" class="validate" style="color: white; width: 70%">
                             <label for="name" style="color: white;"><b>Category Name :</b></label>
                             </div>
                 </div>
-                <div class="col s6" style="">
+                <div class="col s6" >
                             <div class="input-field">
                             <input id="short_desc" name="short_desc" type="text" class="validate" style="color: white; width: 70%">
                             <label for="short_desc" style="color: white;"><b>Short Description :</b></label>

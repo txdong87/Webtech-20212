@@ -46,7 +46,7 @@ $arr_all = $query->fetchAll(PDO::FETCH_ASSOC);
             <div class="row">
                 <div class="col s6" style="">
                             <div class="input-field">
-                            <input id="name" name="fname" type="text" class="validate" style="color: white; width: 70%">
+                            <input id="name" name="name" type="text" class="validate" style="color: white; width: 70%">
                             <label for="name" style="color: white;"><b>Food Name :</b></label>
                             </div>
                 </div>
@@ -68,23 +68,32 @@ $arr_all = $query->fetchAll(PDO::FETCH_ASSOC);
                 <div class="col s12">
 
                 <div class="input-field">
-                <input id="price" name="price" type="text"  style="color: white; width: 70%">
+                <input id="price" name="price" type="text" class="validate" style="color: white; width: 70%">
                 <label for="price" style="color: white;"><b>Price :</b></label>
                 </div>
-                
                 </div>
             
             </div>
             <div class="row">
                 <div class="col s12">
+
                 <div class="input-field">
-                    <input id="desc" name="desc" type="text" class="validate" style="color: white; width: 70%">
-                    <label for="desc" style="color: white;"><b>Description :</b></label>
+                <input id="desc" name="desc" type="text" class="validate" style="color: white; width: 70%">
+                <label for="desc" style="color: white;"><b>Description :</b></label>
                 </div>
                 </div>
             
             </div>
+            <div class="row">
+                <div class="col s12">
 
+                <div class="input-field">
+                <input id="img" name="img" type="text" class="validate" style="color: white; width: 70%">
+                <label for="img" style="color: white;"><b>ImageUrl :</b></label>
+                </div>
+                </div>
+            
+            </div>
             <div class="row">
                 <div class="col s12">
                     <div class="section right" style="padding: 15px 10px;">
