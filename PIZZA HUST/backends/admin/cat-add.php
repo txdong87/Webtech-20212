@@ -27,18 +27,7 @@ if (!isset($_POST['name']) || !isset($_POST['short_desc']) || !isset($_POST['lon
 	exit();
 }
 
-$regex = '/^[(A-Z)?(a-z)?(0-9)?\-?\_?\.?\,?\s*]+$/';
-
-
-if (!preg_match($regex, $_POST['name']) || !preg_match($regex, $_POST['short_desc']) || !preg_match($regex, $_POST['long_desc'])) {
-
-	$_SESSION['msg'] = 'Whoa! Invalid Inputs!';
-
-	header('location: ../../admin/category-list.php');
-
-	exit();
-
-} else {
+ else {
 
 	$name = $_POST['name'];
 	$short_desc = $_POST['short_desc'];

@@ -19,7 +19,7 @@ try {
 	
 }
 
-if (!isset($_POST['name']) || !isset($_POST['desc']) || !isset($_POST['price'])) {
+if (!isset($_POST['name']) || !isset($_POST['desc'])) {
 
 	$_SESSION['msg'] = 'Invalid POST variable keys! Refresh the page!';
 
@@ -28,26 +28,17 @@ if (!isset($_POST['name']) || !isset($_POST['desc']) || !isset($_POST['price']))
 	exit();
 }
 
-$regex = '/^[(A-Z)?(a-z)?(0-9)?\-?\_?\.?\s*]+$/';
-
-
-if (!preg_match($regex, $_POST['name']) || !preg_match($regex, $_POST['desc'])|| !preg_match($regex, $_POST['price'])) {
-
-	$_SESSION['msg'] = 'Whoa! Invalid Inputs!';
-
-	header('location: ../../admin/food-list.php');
-
-	exit();
-
-} else {
+ else {
 
 	$name = $_POST['name'];
 	$desc = $_POST['desc'];
 	$category = $_POST['category'];
-	$price = $_POST['price'];
-	$sql = "INSERT INTO food(cat_id,fname,description,price) VALUES(?,?,?,?)";
+	$price=$_POST['price'];
+	$img=$_POST['img'];
+	$sql = "INSERT INTO food(cat_id,fname,price,description,imageUrl) VALUES(?,?,?,?,?)";
+	echo $sql;
     $query  = $pdoconn->prepare($sql);
-    if ($query->execute([$category, $name, $desc, $price ] )) {
+    if ($query->execute([$category, $name,$price ,$desc,$img])) {
 
     	$_SESSION['msg'] = 'Food Added!';
 
